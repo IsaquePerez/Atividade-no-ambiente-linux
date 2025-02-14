@@ -4,8 +4,8 @@
 logs="/var/log/user_data.log"
 echo "Início da execução do script" > $logs
 
-# Atualizando pacotes
-echo "Atualizando pacotes..." | tee -a $logs
+# Atualizando todos os pacotes do sistema(linux)
+echo "Atualizando pacotes..." | tee -a $logs #Printa tanto pelo terminal quanto no log!
 yum update -y >> $logs 
 
 # Instalando o Apache
@@ -14,15 +14,15 @@ yum install -y httpd >> $logs
 systemctl start httpd >> $logs
 systemctl enable httpd >> $logs
 
-# Baixando o repositório com o site
-echo "Clonando repositório..." | tee -a $logs
+# Instalando Git
+echo "Instalando Git..." | tee -a $logs
 yum install -y git >> $logs 
-git clone https://github.com/IsaquePerez/Atividade-no-ambiente-linux.git /var/www/html/ >> $logs 
 
-# Ajustando permissões
-echo "Ajustando permissões..." | tee -a $logs
-chown -R apache:apache /var/www/html/ >> 
-chmod -R 755 /var/www/html/ >> $logs
+# Clonando o repositório com o site
+echo "Clonando repositório com site e movendo para pasta /var/www/html/..." | tee -a $logs
+git clone https://github.com/IsaquePerez/Atividade-no-ambiente-linux.git /tmp/atividade >> $logs
+mv /tmp/atividade/AtividadeAwsRestart/index.html /var/www/html/ >> $logs 
+# Precisa fazer isso pq pode criar a pasta AtividadeAwsRestart dentro de /var/www/html/!
 
 # Reiniciando Apache
 echo "Reiniciando Apache..." | tee -a $logs

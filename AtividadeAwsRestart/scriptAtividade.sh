@@ -27,7 +27,7 @@ mv /tmp/atividade/AtividadeAwsRestart/index.html /var/www/html/ >> $logs
 # Reiniciando Apache e verificando status
 echo "Reiniciando Apache..." | tee -a $logs
 systemctl restart httpd >> $logs 
-systemctl status httpd
+systemctl status httpd >> $logs
 
 # Enviando solicitação POST
 echo "Enviando solicitação POST..." | tee -a $logs

@@ -29,8 +29,9 @@ Se você encontrou o seu nome na lista, você provavelmente concluiu todos os pa
 obs.: Anexar o User Data e o arquivo de script no teams.
 Meu trabalho
 
+USER DATA VAI ISSO AI:
 #!/bin/bash
 cd /home/ec2-user
-wget Aqui vai ficar o link pro teu github com o script  https://raw.githubusercontent.com/TEU USUARIO/REPOSITOTIOR/ 
-chmod +x deploy-website-ec2.sh
-./deploy-website-ec2.sh
+wget  https://raw.githubusercontent.com/IsaquePerez/Atividade-no-ambiente-linux/main/AtividadeAwsRestart/scriptAtividade.sh
+chmod +x scriptAtividade.sh
+./scriptAtividade.sh

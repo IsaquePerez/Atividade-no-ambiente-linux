@@ -24,9 +24,10 @@ git clone https://github.com/IsaquePerez/Atividade-no-ambiente-linux.git /tmp/at
 mv /tmp/atividade/AtividadeAwsRestart/index.html /var/www/html/ >> $logs 
 # Precisa fazer isso pq pode criar a pasta AtividadeAwsRestart dentro de /var/www/html/!
 
-# Reiniciando Apache
+# Reiniciando Apache e verificando status
 echo "Reiniciando Apache..." | tee -a $logs
 systemctl restart httpd >> $logs 
+systemctl status httpd
 
 # Enviando solicitação POST
 echo "Enviando solicitação POST..." | tee -a $logs

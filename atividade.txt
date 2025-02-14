@@ -1,0 +1,36 @@
+DESAFIO DE SHELL SCRIPT
+Vence 24 de fevereiro de 2025 às 23:59
+Instruções
+##### DESAFIO DE SHELL SCRIPT #####
+
+Requisitos:
+
+- Utilizar o Lab 11 -  Introdução ao EC2 na AWS (ec2) para criação de uma VM.
+- Baixar o arquivo de Shell script na criação da VM, o shell script vai ficar hospedado no github, utilize o comando wget para baixar.
+- Utilizar o USER DATA na criação da VM para executar o shell script.
+
+
+- Shell script
+-- Instalar o serviço do Apache (web server)
+-- Clonar um repositório do github, que vai conter um site qualquer em html simples.
+-- O site deve ser exibido pelo web server..
+-- Enviar uma solictação POST utilizando o comando abaixo, edite o campo nome e coloque o seu nome:
+
+      curl -X POST -d "nome=Leonardo Ferreira" https://difusaotech.com.br/lab/aws/index.php
+      
+-- Registrar todos os passos do script em um arquivo de log.
+
+Entrar no site abaixo e verificar se a entregada da atividade foi feita com sucesso:
+
+https://difusaotech.com.br/lab/aws/
+
+Se você encontrou o seu nome na lista, você provavelmente concluiu todos os passos com sucesso, parabéns.
+
+obs.: Anexar o User Data e o arquivo de script no teams.
+Meu trabalho
+
+#!/bin/bash
+cd /home/ec2-user
+wget Aqui vai ficar o link pro teu github com o script  https://raw.githubusercontent.com/TEU USUARIO/REPOSITOTIOR/ 
+chmod +x deploy-website-ec2.sh
+./deploy-website-ec2.sh
